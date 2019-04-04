@@ -30,7 +30,7 @@ const Title = styled.span`
 `;
 
 const Movie = ({ id, title, rating, poster }) => (
-  <Link to={`/details/${id}/`}>
+  <Link to={`/details/${id}`}>
     <Card background={poster}>
       <Title>
         {title.length > 15 ? `${title.substring(0, 12)}...` : title} / {rating}

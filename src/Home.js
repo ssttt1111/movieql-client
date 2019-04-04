@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Query } from "react-apollo";
 import { HOME_PAGE } from "./queries";
+import Helmet from "react-helmet";
 import Movie from "./Movie";
 
 const Container = styled.div`
@@ -11,8 +12,13 @@ const Container = styled.div`
   justify-items: center;
 `;
 
+const span = styled.span``;
+
 const Home = () => (
   <Container>
+    <Helmet>
+      <title>Welcome to MovieQL</title>
+    </Helmet>
     <Query query={HOME_PAGE}>
       {({ loading, data, error }) => {
         if (loading) return "loading";
